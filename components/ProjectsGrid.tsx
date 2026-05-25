@@ -1,30 +1,49 @@
 import { projects } from "@/lib/projects";
 import ProjectCard from "./ProjectCard";
+import Reveal, { RevealStagger, RevealItem } from "./Reveal";
 
 export default function ProjectsGrid() {
+  // Bento layout: first two are large (ShineX, AI Ops), remaining are small
+  const large = projects.slice(0, 2);
+  const rest = projects.slice(2);
+
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-      <div className="mb-12 flex items-end justify-between gap-6">
+    <section
+      id="projects"
+      className="relative mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-28"
+    >
+      <Reveal className="mb-10 flex flex-col gap-6 sm:mb-14 md:flex-row md:items-end md:justify-between">
         <div>
-          <div className="mb-3 text-xs uppercase tracking-[0.2em] text-ink-400">
+          <div className="mb-3 text-[11px] uppercase tracking-[0.22em] text-ink-400">
             ◇ Selected work
           </div>
           <h2 className="max-w-2xl text-3xl font-medium tracking-tight text-ink-50 sm:text-4xl md:text-5xl">
-            Seven products,
-            <span className="font-display italic font-normal text-ink-300"> one builder.</span>
+            Projects
           </h2>
         </div>
-        <p className="hidden max-w-sm text-sm text-ink-400 md:block">
-          Each card is a working project — click to read the case study and see
-          the stack, the problem, and what shipped.
+        <p className="max-w-sm text-sm leading-relaxed text-ink-400">
+          Each card is a working project — click through for the full case
+          study with stack, problem, and what shipped.
         </p>
-      </div>
+      </Reveal>
 
-      <div className="grid auto-rows-[minmax(0,1fr)] gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((p, i) => (
-          <ProjectCard key={p.slug} project={p} large={i === 0} />
+      {/* Top: two feature cards */}
+      <RevealStagger className="grid gap-5 md:grid-cols-2">
+        {large.map((p) => (
+          <RevealItem key={p.slug}>
+            <ProjectCard project={p} variant="large" />
+          </RevealItem>
         ))}
-      </div>
+      </RevealStagger>
+
+      {/* Bottom: smaller cards */}
+      <RevealStagger className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" stagger={0.06}>
+        {rest.map((p) => (
+          <RevealItem key={p.slug}>
+            <ProjectCard project={p} variant="small" />
+          </RevealItem>
+        ))}
+      </RevealStagger>
     </section>
   );
 }

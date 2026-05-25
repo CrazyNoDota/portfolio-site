@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import ProjectsGrid from "@/components/ProjectsGrid";
 import About from "@/components/About";
+import StackSection from "@/components/StackSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Marquee />
       <ProjectsGrid />
       <About />
+      <StackSection />
       <Footer />
     </main>
   );

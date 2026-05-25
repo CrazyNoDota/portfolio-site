@@ -88,3 +88,40 @@ body {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Smooth hardware-accelerated transforms for floating objects */
+.gpu {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Hide decorative elements when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-med,
+  .animate-drift,
+  .animate-sparkle-twinkle,
+  .animate-pulse-orb,
+  .animate-spin-slow,
+  .animate-marquee {
+    animation: none !important;
+  }
+}
+
+/* Glow ring around hero mockups */
+.glow-ring {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 30px 80px -20px rgba(99, 102, 241, 0.4),
+    0 10px 40px -10px rgba(34, 211, 238, 0.25);
+}
+
+/* Smooth scrolling for in-page anchor links */
+html { scroll-behavior: smooth; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #08080A; }
+::-webkit-scrollbar-thumb { background: #1B1B23; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #272731; }
