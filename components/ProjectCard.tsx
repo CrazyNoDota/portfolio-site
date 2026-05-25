@@ -43,25 +43,10 @@ export default function ProjectCard({
         href={`/projects/${project.slug}`}
         className={`card-glow relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-sm transition-all duration-300 hover:border-white/25`}
       >
-        {/* Visual area */}
+        {/* Visual area — flat dark surface */}
         <div
-          className={`relative overflow-hidden ${isLarge ? "h-64 sm:h-72" : "h-40 sm:h-48"}`}
-          style={{
-            background: `linear-gradient(135deg, ${project.hero.from} 0%, ${project.hero.via} 55%, ${project.hero.to} 100%)`,
-          }}
+          className={`relative overflow-hidden bg-ink-900 ${isLarge ? "h-80 sm:h-96" : "h-56 sm:h-64"}`}
         >
-          {/* Faint grid */}
-          <div
-            className="absolute inset-0 opacity-[0.16]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-              backgroundSize: "32px 32px",
-              maskImage:
-                "radial-gradient(ellipse 70% 60% at 50% 50%, black 50%, transparent 100%)",
-            }}
-          />
-
           {/* Project art */}
           {art && (
             <div className="absolute inset-0">
@@ -71,21 +56,21 @@ export default function ProjectCard({
                   alt={project.name}
                   fill
                   sizes={isLarge ? "(min-width:1024px) 600px, 100vw" : "(min-width:1024px) 300px, 50vw"}
-                  quality={80}
+                  quality={85}
                   loading="lazy"
-                  className="object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
               ) : (
-                <div className="absolute inset-0 grid place-items-center p-4">
+                <div className="absolute inset-0 grid place-items-center p-3">
                   <Image
                     src={art.src}
                     alt={project.name}
-                    width={isLarge ? 520 : 320}
-                    height={isLarge ? 320 : 200}
-                    sizes={isLarge ? "(min-width:1024px) 520px, 80vw" : "(min-width:1024px) 320px, 45vw"}
-                    quality={80}
+                    width={isLarge ? 720 : 480}
+                    height={isLarge ? 440 : 300}
+                    sizes={isLarge ? "(min-width:1024px) 720px, 90vw" : "(min-width:1024px) 480px, 50vw"}
+                    quality={85}
                     loading="lazy"
-                    className="h-auto max-h-[88%] w-auto max-w-[92%] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                    className="h-auto max-h-full w-auto max-w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
                 </div>
               )}
@@ -99,13 +84,10 @@ export default function ProjectCard({
             >
               {project.status}
             </span>
-            <span className="font-mono text-[11px] text-white/70">
+            <span className="font-mono text-[11px] text-white/60">
               {project.year}
             </span>
           </div>
-
-          {/* Bottom gradient for legibility */}
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/45 to-transparent" />
         </div>
 
         {/* Text content */}

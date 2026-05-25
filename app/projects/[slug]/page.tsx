@@ -88,20 +88,15 @@ export default async function ProjectPage({
                 href={`/projects/${p.slug}`}
                 className="card-glow group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all hover:-translate-y-1 hover:border-white/25"
               >
-                <div
-                  className="relative h-32 overflow-hidden"
-                  style={{
-                    background: `linear-gradient(135deg, ${p.hero.from}, ${p.hero.via}, ${p.hero.to})`,
-                  }}
-                >
+                <div className="relative h-40 overflow-hidden bg-ink-900">
                   {art && (
-                    <div className="absolute inset-0 grid place-items-center">
+                    <div className="absolute inset-0 grid place-items-center p-3">
                       <Image
                         src={art.src}
                         alt={p.name}
-                        width={180}
-                        height={120}
-                        className="h-auto max-h-[80%] w-auto max-w-[70%] object-contain transition-transform duration-500 group-hover:scale-110"
+                        width={280}
+                        height={180}
+                        className="h-auto max-h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                   )}
