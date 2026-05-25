@@ -37,8 +37,8 @@ function Floater({
           alt={alt}
           width={width}
           height={height}
+          loading="lazy"
           className="h-auto w-full select-none drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
-          priority
         />
       </div>
     </motion.div>

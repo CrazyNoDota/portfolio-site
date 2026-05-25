@@ -14,8 +14,8 @@ const statusColor: Record<Project["status"], string> = {
 
 // Per-project artwork mapping (lives in public/assets/home/)
 export const cardArt: Record<string, { src: string; objectFit?: "cover" | "contain"; bgFrom?: string; bgTo?: string }> = {
-  shinex: { src: "/assets/home/shinex_large_bucket_photo_area.png", objectFit: "cover" },
-  "ai-ops-platform": { src: "/assets/home/ai_operations_dashboard_art.png", objectFit: "cover" },
+  shinex: { src: "/assets/project/hero_mockup_group.png", objectFit: "contain" },
+  "ai-ops-platform": { src: "/assets/home/ai_operations_dashboard_art.png", objectFit: "contain" },
   "ai-grant-agent": { src: "/assets/home/ai_grant_agent_icon_docs_telegram.png", objectFit: "contain" },
   "advertmarket-kz": { src: "/assets/home/advertmarket_cart.png", objectFit: "contain" },
   contentfarm: { src: "/assets/home/contentfarm_video_panel.png", objectFit: "contain" },
@@ -71,16 +71,21 @@ export default function ProjectCard({
                   alt={project.name}
                   fill
                   sizes={isLarge ? "(min-width:1024px) 600px, 100vw" : "(min-width:1024px) 300px, 50vw"}
+                  quality={80}
+                  loading="lazy"
                   className="object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-105"
                 />
               ) : (
-                <div className="absolute inset-0 grid place-items-center">
+                <div className="absolute inset-0 grid place-items-center p-4">
                   <Image
                     src={art.src}
                     alt={project.name}
-                    width={isLarge ? 360 : 220}
-                    height={isLarge ? 220 : 140}
-                    className="h-auto max-h-[80%] w-auto max-w-[80%] object-contain transition-transform duration-700 ease-out group-hover:scale-110 group-hover:-rotate-2"
+                    width={isLarge ? 520 : 320}
+                    height={isLarge ? 320 : 200}
+                    sizes={isLarge ? "(min-width:1024px) 520px, 80vw" : "(min-width:1024px) 320px, 45vw"}
+                    quality={80}
+                    loading="lazy"
+                    className="h-auto max-h-[88%] w-auto max-w-[92%] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                   />
                 </div>
               )}

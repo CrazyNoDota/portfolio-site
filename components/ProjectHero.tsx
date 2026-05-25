@@ -44,6 +44,7 @@ function Floater({
           alt={alt}
           width={width}
           height={height}
+          loading="lazy"
           className="h-auto w-full select-none drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
         />
       </div>
@@ -151,59 +152,34 @@ export default function ProjectHero({
         </div>
 
         {/* Right: visual mockup composition */}
-        <div className="relative h-[360px] sm:h-[440px] lg:col-span-6 lg:h-[480px]">
+        <div className="relative h-[360px] sm:h-[440px] lg:col-span-6 lg:h-[500px]">
           <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.94, y: 8 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, ease, delay: 0.15 }}
             className="absolute inset-0 grid place-items-center"
           >
             {isShineX ? (
-              <>
-                <div className="relative h-full w-full">
-                  <Image
-                    src="/assets/project/laptop_dashboard_mockup.png"
-                    alt="ShineX dashboard"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-                <div className="absolute right-2 top-6 w-[120px] sm:right-6 sm:top-10 sm:w-[150px] lg:w-[170px]">
-                  <Image
-                    src="/assets/project/mobile_booking_mockup.png"
-                    alt=""
-                    width={170}
-                    height={340}
-                    className="h-auto w-full animate-float-med drop-shadow-[0_20px_40px_rgba(0,0,0,0.55)]"
-                  />
-                </div>
-                <div className="absolute left-[10%] top-[35%] w-[120px] animate-float-slow sm:w-[150px]">
-                  <Image
-                    src="/assets/project/floating_upcoming_booking_card.png"
-                    alt=""
-                    width={170}
-                    height={150}
-                    className="h-auto w-full drop-shadow-[0_15px_30px_rgba(0,0,0,0.55)]"
-                  />
-                </div>
-                <div className="absolute bottom-[18%] left-[30%] w-[130px] animate-float-med sm:w-[160px]">
-                  <Image
-                    src="/assets/project/floating_kaspi_payment_card.png"
-                    alt=""
-                    width={170}
-                    height={90}
-                    className="h-auto w-full drop-shadow-[0_15px_30px_rgba(0,0,0,0.55)]"
-                  />
-                </div>
-              </>
+              <div className="relative h-full w-full animate-float-slow">
+                <Image
+                  src="/assets/project/hero_mockup_group.png"
+                  alt="ShineX product mockup"
+                  fill
+                  sizes="(min-width:1024px) 600px, 100vw"
+                  quality={90}
+                  className="object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)]"
+                  priority
+                />
+              </div>
             ) : (
               heroArt && (
-                <div className="relative h-full w-full p-4">
+                <div className="relative h-full w-full p-4 animate-float-slow">
                   <Image
                     src={heroArt}
                     alt={project.name}
                     fill
+                    sizes="(min-width:1024px) 600px, 100vw"
+                    quality={90}
                     className="object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)]"
                     priority
                   />
@@ -212,23 +188,14 @@ export default function ProjectHero({
             )}
           </motion.div>
 
-          {/* Decorative floaters */}
+          {/* Subtle ambient sparkles — non-redundant accents only */}
           <Floater
             src="/assets/project/sparkle_big_hero.png"
             alt=""
             width={50}
             height={50}
-            className="left-[18%] top-[14%] w-[28px] sm:w-[40px]"
+            className="left-[8%] top-[10%] w-[24px] sm:w-[34px]"
             delay={0.7}
-            loop="sparkle-twinkle"
-          />
-          <Floater
-            src="/assets/project/sparkle_small_hero.png"
-            alt=""
-            width={28}
-            height={28}
-            className="left-[24%] top-[8%] w-[16px] sm:w-[22px]"
-            delay={0.9}
             loop="sparkle-twinkle"
           />
           <Floater
@@ -236,50 +203,10 @@ export default function ProjectHero({
             alt=""
             width={50}
             height={48}
-            className="right-[6%] top-[58%] w-[28px] sm:w-[40px]"
+            className="right-[4%] top-[62%] w-[24px] sm:w-[36px]"
             delay={0.8}
             loop="sparkle-twinkle"
           />
-          {isShineX && (
-            <>
-              <Floater
-                src="/assets/project/cleaning_brush_left.png"
-                alt=""
-                width={100}
-                height={120}
-                className="-left-2 bottom-4 w-[60px] sm:w-[90px]"
-                delay={0.6}
-                loop="float-slow"
-              />
-              <Floater
-                src="/assets/project/blue_orb_left.png"
-                alt=""
-                width={50}
-                height={50}
-                className="left-[14%] bottom-[10%] w-[28px] sm:w-[40px]"
-                delay={0.85}
-                loop="drift"
-              />
-              <Floater
-                src="/assets/project/cleaning_bucket_top_right.png"
-                alt=""
-                width={140}
-                height={180}
-                className="-right-2 -top-2 w-[80px] sm:w-[120px]"
-                delay={0.4}
-                loop="float-med"
-              />
-              <Floater
-                src="/assets/project/magnifier_right.png"
-                alt=""
-                width={80}
-                height={86}
-                className="-right-2 bottom-[14%] w-[50px] sm:w-[70px]"
-                delay={0.7}
-                loop="float-slow"
-              />
-            </>
-          )}
         </div>
       </div>
     </section>
