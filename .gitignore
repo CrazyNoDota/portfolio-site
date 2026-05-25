@@ -8,3 +8,5 @@ build
 .vercel
 next-env.d.ts
 DELETE_ME_partial_install/
+
+.vercel
