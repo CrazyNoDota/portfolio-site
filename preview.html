@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ansar — Portfolio preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink-950:#08080A; --ink-900:#0B0B0F; --ink-800:#121218; --ink-700:#1B1B23;
+    --ink-300:#9B9BAA; --ink-400:#6B6B7B; --ink-100:#E8E8EE; --ink-50:#F4F4F7;
+    --violet:#8B5CF6; --cyan:#22D3EE; --rose:#F472B6;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--ink-950);color:var(--ink-100);
+    font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:rgba(139,92,246,.45);color:#fff}
+  .display{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400}
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+  .text-grad{background:linear-gradient(180deg,#fff 0%,#c7c7d1 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .text-grad-accent{background:linear-gradient(120deg,#c4b5fd 0%,#67e8f9 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  /* Background orbs */
+  .bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+  .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.55;
+    animation:pulse 9s ease-in-out infinite}
+  .orb.violet{top:-160px;left:50%;transform:translateX(-50%);width:640px;height:640px;
+    background:radial-gradient(circle,rgba(139,92,246,.55) 0%,transparent 70%)}
+  .orb.cyan{top:35%;left:-120px;width:460px;height:460px;
+    background:radial-gradient(circle,rgba(34,211,238,.45) 0%,transparent 70%);
+    animation-delay:1.5s}
+  .orb.rose{top:65%;right:-120px;width:520px;height:520px;
+    background:radial-gradient(circle,rgba(244,114,182,.35) 0%,transparent 70%);
+    animation-delay:3s}
+  @keyframes pulse{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:.7;transform:scale(1.05)}}
+  .grid-bg{position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 50%,transparent 100%);
+            mask-image:radial-gradient(ellipse 60% 50% at 50% 0%,#000 50%,transparent 100%)}
+  /* Header */
+  header{position:sticky;top:0;z-index:40;backdrop-filter:blur(20px);
+    background:rgba(8,8,10,.6);border-bottom:1px solid rgba(255,255,255,.05)}
+  .hdr-inner{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;letter-spacing:-.01em}
+  .logo .sq{width:24px;height:24px;display:grid;place-items:center;border-radius:6px;
+    background:linear-gradient(135deg,var(--violet),var(--cyan));color:#08080A;font-weight:700;font-size:10px}
+  nav.main{display:none;gap:28px;font-size:14px;color:var(--ink-300)}
+  @media(min-width:768px){nav.main{display:flex}}
+  nav.main a:hover{color:var(--ink-50)}
+  .btn{display:inline-flex;align-items:center;gap:6px;border-radius:999px;font-size:13px;font-weight:500;
+    padding:7px 16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);
+    color:var(--ink-100);transition:background .2s}
+  .btn:hover{background:rgba(255,255,255,.1)}
+  .btn-primary{background:#fff;color:var(--ink-950);border:0;padding:10px 20px;font-size:14px}
+  .btn-primary:hover{background:#fff;transform:scale(1.02)}
+  /* Hero */
+  .hero{max-width:1120px;margin:0 auto;padding:80px 24px 96px;animation:fadeup .9s ease both}
+  @keyframes fadeup{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.05);padding:5px 12px;border-radius:999px;font-size:12px;color:var(--ink-300);margin-bottom:24px}
+  .dot{width:6px;height:6px;border-radius:50%;background:#34d399;box-shadow:0 0 8px rgba(52,211,153,.8)}
+  h1.hero-title{font-size:clamp(40px,7vw,88px);font-weight:500;letter-spacing:-.03em;line-height:1.02;margin:0}
+  .hero-sub{color:var(--ink-300);font-size:clamp(17px,1.5vw,20px);margin-top:28px;max-width:640px}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px}
+  /* Marquee */
+  .marquee{border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);
+    background:rgba(8,8,10,.4);padding:24px 0;overflow:hidden;position:relative}
+  .marquee-label{max-width:1120px;margin:0 auto 16px;padding:0 24px;
+    display:flex;align-items:center;gap:12px;color:var(--ink-400);font-size:11px;text-transform:uppercase;letter-spacing:.18em}
+  .marquee-label .line{flex:1;height:1px;background:rgba(255,255,255,.05)}
+  .mq-track{display:flex;width:max-content;gap:48px;animation:mq 40s linear infinite}
+  @keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .mq-item{display:flex;align-items:center;gap:10px;white-space:nowrap;color:var(--ink-300);font-size:14px}
+  .mq-item .sq{width:28px;height:28px;display:grid;place-items:center;border-radius:6px;font-size:14px;color:#fff}
+  .mq-item .name{color:var(--ink-100);font-weight:500}
+  .mq-fade-l,.mq-fade-r{position:absolute;top:60px;bottom:0;width:96px;pointer-events:none}
+  .mq-fade-l{left:0;background:linear-gradient(90deg,var(--ink-950),transparent)}
+  .mq-fade-r{right:0;background:linear-gradient(-90deg,var(--ink-950),transparent)}
+  /* Projects */
+  section.projects{max-width:1120px;margin:0 auto;padding:80px 24px}
+  .proj-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+  .label{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--ink-400);margin-bottom:12px}
+  h2{font-size:clamp(28px,4vw,48px);font-weight:500;letter-spacing:-.02em;color:var(--ink-50);margin:0;max-width:600px}
+  .proj-head p{max-width:340px;color:var(--ink-400);font-size:14px;margin:0}
+  .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+  .card{position:relative;display:flex;flex-direction:column;overflow:hidden;border-radius:20px;
+    border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);backdrop-filter:blur(4px);
+    transition:border-color .3s,transform .3s;cursor:pointer}
+  .card:hover{border-color:rgba(255,255,255,.2);transform:translateY(-2px)}
+  .card.large{grid-row:span 2}
+  .card-visual{position:relative;height:176px;overflow:hidden}
+  .card.large .card-visual{height:288px}
+  .card-visual .grid-mini{position:absolute;inset:0;opacity:.18;
+    background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);
+    background-size:32px 32px;
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,#000 50%,transparent 100%);
+            mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,#000 50%,transparent 100%)}
+  .glyph{position:absolute;bottom:-24px;right:-16px;font-family:'Instrument Serif',serif;
+    font-size:220px;line-height:1;color:rgba(255,255,255,.15);user-select:none;
+    transition:transform .5s}
+  .card.large .glyph{font-size:280px}
+  .card:hover .glyph{transform:translate(-8px,-6px)}
+  .card-head{position:relative;z-index:1;padding:20px;display:flex;justify-content:space-between;align-items:flex-start}
+  .status{padding:3px 10px;border-radius:999px;font-size:11px;font-weight:500;border:1px solid}
+  .status-Live{background:rgba(52,211,153,.15);color:#6ee7b7;border-color:rgba(52,211,153,.3)}
+  .status-MVP{background:rgba(251,191,36,.15);color:#fde68a;border-color:rgba(251,191,36,.3)}
+  .status-Dev{background:rgba(167,139,250,.15);color:#ddd6fe;border-color:rgba(167,139,250,.3)}
+  .status-Proto{background:rgba(34,211,238,.15);color:#a5f3fc;border-color:rgba(34,211,238,.3)}
+  .year{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,.6)}
+  .card-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .card-body .cat{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:var(--ink-400)}
+  .card-body h3{font-size:20px;font-weight:600;color:var(--ink-50);margin:0}
+  .card-body p{font-size:14px;line-height:1.55;color:var(--ink-300);margin:0}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .stack span{font-size:11px;padding:2px 8px;border-radius:6px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:#C7C7D1}
+  .read{margin-top:16px;font-size:14px;color:var(--ink-100)}
+  /* About */
+  section.about{max-width:1120px;margin:0 auto;padding:80px 24px}
+  .about-grid{display:grid;gap:40px;grid-template-columns:1fr}
+  @media(min-width:768px){.about-grid{grid-template-columns:5fr 7fr}}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}
+  @media(min-width:640px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stat{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);border-radius:12px;padding:16px}
+  .stat .n{font-family:'Instrument Serif',serif;font-size:30px;color:var(--ink-50)}
+  .stat .l{margin-top:4px;font-size:12px;color:var(--ink-400);line-height:1.35}
+  /* Footer */
+  footer{border-top:1px solid rgba(255,255,255,.05);background:rgba(8,8,10,.5);margin-top:40px}
+  .ft{max-width:1120px;margin:0 auto;padding:64px 24px}
+  .ft-grid{display:grid;gap:40px;grid-template-columns:1fr}
+  @media(min-width:768px){.ft-grid{grid-template-columns:5fr 7fr}}
+  .ft h3{font-family:'Instrument Serif',serif;font-size:clamp(28px,4vw,48px);color:var(--ink-50);margin:0;font-weight:400}
+  .ft p{color:var(--ink-400);max-width:420px;margin-top:14px}
+  .ft-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .ft-cols div{font-size:14px}
+  .ft-cols .h{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:var(--ink-400);margin-bottom:12px}
+  .ft-cols ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;color:#C7C7D1}
+  .ft-cols a:hover{color:#fff}
+  .ft-foot{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.05);
+    display:flex;justify-content:space-between;font-size:12px;color:#3A3A47;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <div class="orb violet"></div>
+  <div class="orb cyan"></div>
+  <div class="orb rose"></div>
+  <div class="grid-bg"></div>
+</div>
+
+<header>
+  <div class="hdr-inner">
+    <a class="logo" href="#"><span class="sq">A</span><span>ansar</span><span style="color:var(--ink-400)">/portfolio</span></a>
+    <nav class="main">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="https://shinex.kz" target="_blank">ShineX ↗</a>
+    </nav>
+    <a class="btn" href="mailto:myrentmobile@gmail.com">Get in touch</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="pill"><span class="dot"></span>Astana, Kazakhstan · open for collaborations</div>
+  <h1 class="hero-title text-grad">Selected products,<br>built for the <span class="display text-grad-accent">real world.</span></h1>
+  <p class="hero-sub">I'm Ansar — I build AI-native products and marketplaces from Astana. From a live cleaning service to a daily grant-scouting agent, every project here is something I designed and shipped.</p>
+  <div class="ctas">
+    <a class="btn-primary" href="#projects">See the work</a>
+    <a class="btn" href="https://shinex.kz" target="_blank">Visit ShineX (live) ↗</a>
+  </div>
+</section>
+
+<section class="marquee">
+  <div class="marquee-label"><span class="line"></span>shipped &amp; in flight<span class="line"></span></div>
+  <div style="position:relative;overflow:hidden">
+    <div class="mq-track" id="mq"></div>
+    <div class="mq-fade-l"></div><div class="mq-fade-r"></div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="proj-head">
+    <div>
+      <div class="label">◇ Selected work</div>
+      <h2>Seven products,<span class="display" style="color:var(--ink-300)"> one builder.</span></h2>
+    </div>
+    <p>Each card is a working project — click to read the case study and see the stack, the problem, and what shipped.</p>
+  </div>
+  <div class="grid" id="cards"></div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="label">◯ About</div>
+      <h2>I build the boring things<br><span class="display" style="color:var(--ink-300)">well, and the wild things fast.</span></h2>
+    </div>
+    <div style="color:var(--ink-300);line-height:1.7">
+      <p>I'm based in Astana and most of what I do is identify a painful, real-world workflow — usually inside a Kazakhstan-sized SMB — and rebuild it as a calm, AI-native product.</p>
+      <p>That means a lot of Next.js, a lot of TypeScript, and a lot of Russian-first UX. It also means building the unglamorous things other people skip: ops dashboards, Telegram bots, scrapers, booking flows.</p>
+      <p>Open to commissions, partnerships, and the kind of grants where the deck has to land on a real problem.</p>
+      <div class="stats">
+        <div class="stat"><div class="n">7</div><div class="l">Products shipped or in flight</div></div>
+        <div class="stat"><div class="n">3</div><div class="l">Languages (RU/KK/EN)</div></div>
+        <div class="stat"><div class="n">1</div><div class="l">Live in Astana</div></div>
+        <div class="stat"><div class="n">∞</div><div class="l">Cups of коже</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft">
+    <div class="ft-grid">
+      <div>
+        <h3>Let's build<br><span class="display text-grad-accent">something useful.</span></h3>
+        <p>Have a real-world workflow that needs a quiet, AI-native rebuild? Send a one-paragraph brief — I read everything.</p>
+        <a class="btn-primary" style="margin-top:24px" href="mailto:myrentmobile@gmail.com">myrentmobile@gmail.com →</a>
+      </div>
+      <div class="ft-cols">
+        <div><div class="h">Projects</div><ul>
+          <li><a href="#">ShineX</a></li><li><a href="#">AI Ops Platform</a></li>
+          <li><a href="#">AI Grant Agent</a></li><li><a href="#">AdvertMarket KZ</a></li>
+        </ul></div>
+        <div><div class="h">More</div><ul>
+          <li><a href="#">ContentFarm</a></li><li><a href="#">RoboStar</a></li>
+          <li><a href="#">Solvea Atelier</a></li>
+        </ul></div>
+        <div><div class="h">Elsewhere</div><ul>
+          <li><a href="https://shinex.kz" target="_blank">shinex.kz ↗</a></li>
+          <li><a href="mailto:myrentmobile@gmail.com">Email</a></li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="ft-foot"><div>© 2026 Ansar. Built in Astana.</div><div class="mono">v1 · preview · next.js</div></div>
+  </div>
+</footer>
+
+<script>
+const projects = [
+  {slug:"shinex",name:"ShineX",tagline:"Professional cleaning, booked in 60 seconds.",cat:"Marketplace · Live",status:"Live",year:"2026",icon:"✦",stack:["Next.js","Tailwind","next-intl","Supabase"],from:"#0f172a",via:"#155e75",to:"#22d3ee"},
+  {slug:"ai-ops-platform",name:"AI Operations Platform",tagline:"An AI workforce for SMBs in the CIS market.",cat:"AI · B2B SaaS",status:"Dev",year:"2026",icon:"◐",stack:["Next.js","TypeScript","Postgres","OpenAI"],from:"#1e1b4b",via:"#5b21b6",to:"#a78bfa"},
+  {slug:"ai-grant-agent",name:"AI Grant Agent",tagline:"Daily grant scouting, scored by an AI that learns from your team.",cat:"AI · Internal tool",status:"Live",year:"2026",icon:"◆",stack:["Next.js","FastAPI","Supabase","Telegram"],from:"#451a03",via:"#b45309",to:"#fbbf24"},
+  {slug:"advertmarket-kz",name:"AdvertMarket KZ",tagline:"Uber for outdoor advertising — connecting businesses to KZ ad agencies.",cat:"Marketplace · B2B",status:"MVP",year:"2026",icon:"▲",stack:["Next.js 15","Tailwind","next-intl","Motion"],from:"#1e1b4b",via:"#3730a3",to:"#818cf8"},
+  {slug:"contentfarm",name:"ContentFarm",tagline:"A desktop studio that drafts persona-driven short videos every day.",cat:"AI · Desktop app",status:"MVP",year:"2026",icon:"◉",stack:["Electron","React 19","FFmpeg","Vite"],from:"#3f1d38",via:"#9d174d",to:"#fb7185"},
+  {slug:"robostar",name:"RoboStar",tagline:"A Scratch-style IDE for LEGO EV3, in Russian, with an AI tutor.",cat:"EdTech · Desktop",status:"Proto",year:"2026",icon:"◇",stack:["Next.js 16","React 19","AI Gateway"],from:"#022c22",via:"#047857",to:"#34d399"},
+  {slug:"solvea-atelier",name:"Solvea Atelier",tagline:"A premium boutique experience for fur coats and winter outerwear.",cat:"Ecommerce · Concept",status:"Proto",year:"2026",icon:"❖",stack:["HTML","CSS","Vanilla JS"],from:"#1c1917",via:"#57534e",to:"#d6d3d1"}
+];
+const statusMap={Live:"status-Live",MVP:"status-MVP",Dev:"status-Dev",Proto:"status-Proto"};
+const cards = document.getElementById('cards');
+projects.forEach((p,i)=>{
+  const lg = i===0 ? ' large':'';
+  cards.insertAdjacentHTML('beforeend', `
+    <a class="card${lg}" href="#">
+      <div class="card-visual" style="background:linear-gradient(135deg,${p.from} 0%,${p.via} 55%,${p.to} 100%)">
+        <div class="grid-mini"></div>
+        <span class="glyph">${p.icon}</span>
+        <div class="card-head">
+          <span class="status ${statusMap[p.status]||''}">${p.status==="Dev"?"In development":p.status==="Proto"?"Prototype":p.status}</span>
+          <span class="year">${p.year}</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="cat">${p.cat}</div>
+        <h3>${p.name}</h3>
+        <p>${p.tagline}</p>
+        <div class="stack">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div>
+        <div class="read">Read case study →</div>
+      </div>
+    </a>`);
+});
+// Marquee duplicates
+const mq = document.getElementById('mq');
+[...projects, ...projects].forEach(p=>{
+  mq.insertAdjacentHTML('beforeend', `
+    <div class="mq-item">
+      <span class="sq" style="background:linear-gradient(135deg,${p.from},${p.to})">${p.icon}</span>
+      <span class="name">${p.name}</span>
+      <span style="color:var(--ink-400);font-size:12px">— ${p.cat}</span>
+    </div>`);
+});
+</script>
+</body>
+</html>
