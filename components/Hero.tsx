@@ -6,7 +6,12 @@ import { motion } from "motion/react";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-// Floating decorative asset
+const stats = [
+  { value: "7", label: "Products and concepts" },
+  { value: "RU / KK / EN", label: "Localized UX" },
+  { value: "AI + payments", label: "Practical integrations" },
+];
+
 function Floater({
   src,
   alt,
@@ -27,7 +32,7 @@ function Floater({
   return (
     <motion.div
       className={`pointer-events-none absolute gpu ${className}`}
-      initial={{ opacity: 0, scale: 0.7, y: 16 }}
+      initial={{ opacity: 0, scale: 0.86, y: 12 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ delay, duration: 0.9, ease }}
     >
@@ -38,7 +43,7 @@ function Floater({
           width={width}
           height={height}
           loading="eager"
-          className="h-auto w-full select-none drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
+          className="h-auto w-full select-none drop-shadow-[0_18px_36px_rgba(0,0,0,0.42)]"
         />
       </div>
     </motion.div>
@@ -47,71 +52,24 @@ function Floater({
 
 export default function Hero() {
   return (
-    <section className="relative mx-auto max-w-6xl px-5 pt-16 pb-12 sm:px-6 sm:pt-20 sm:pb-20 lg:pt-24">
-      {/* Decorative floaters — only render on >=sm to keep mobile tidy */}
-      <div className="absolute inset-0 hidden sm:block">
-        <Floater
-          src="/assets/home/left_cleaning_brush.webp"
-          alt=""
-          width={140}
-          height={150}
-          className="left-2 top-32 w-[90px] lg:w-[120px] xl:w-[140px]"
-          delay={0.45}
-          loop="float-slow"
-        />
-        <Floater
-          src="/assets/home/blue_orb_left.webp"
-          alt=""
-          width={70}
-          height={70}
-          className="left-[110px] top-[260px] w-[40px] lg:w-[56px]"
-          delay={0.55}
-          loop="drift"
-        />
-        <Floater
-          src="/assets/home/left_yellow_sparkles.webp"
-          alt=""
-          width={70}
-          height={70}
-          className="left-[180px] top-24 w-[42px] lg:w-[56px]"
-          delay={0.35}
-          loop="sparkle-twinkle"
-        />
-        <Floater
-          src="/assets/home/tiny_blue_sparkle_left.webp"
-          alt=""
-          width={32}
-          height={32}
-          className="left-[270px] top-44 w-[18px] lg:w-[24px]"
-          delay={0.7}
-          loop="sparkle-twinkle"
-        />
-
+    <section className="relative mx-auto max-w-6xl px-5 pb-14 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:pt-24">
+      <div className="absolute inset-x-5 top-8 hidden h-[520px] overflow-hidden sm:block">
         <Floater
           src="/assets/home/kaspi_shopping_bag.webp"
           alt=""
           width={150}
           height={150}
-          className="left-[42%] top-8 w-[80px] lg:w-[110px]"
-          delay={0.5}
+          className="left-[8%] top-20 w-[88px] lg:w-[118px]"
+          delay={0.35}
           loop="float-med"
-        />
-        <Floater
-          src="/assets/home/paper_plane.webp"
-          alt=""
-          width={170}
-          height={170}
-          className="right-[30%] top-2 w-[90px] lg:w-[130px]"
-          delay={0.4}
-          loop="drift"
         />
         <Floater
           src="/assets/home/ai_chip.webp"
           alt=""
           width={150}
           height={150}
-          className="right-[12%] top-16 w-[80px] lg:w-[110px]"
-          delay={0.55}
+          className="right-[12%] top-10 w-[84px] lg:w-[116px]"
+          delay={0.45}
           loop="float-slow"
         />
         <Floater
@@ -119,59 +77,41 @@ export default function Hero() {
           alt=""
           width={200}
           height={200}
-          className="right-2 top-[230px] w-[110px] lg:w-[160px]"
-          delay={0.6}
+          className="right-2 top-[255px] w-[116px] lg:w-[158px]"
+          delay={0.55}
           loop="float-med"
-        />
-        <Floater
-          src="/assets/home/magnifier.webp"
-          alt=""
-          width={100}
-          height={100}
-          className="right-[18%] top-[330px] w-[58px] lg:w-[80px]"
-          delay={0.7}
-          loop="drift"
         />
         <Floater
           src="/assets/home/kazakhstan_map_pin.webp"
           alt=""
           width={70}
           height={70}
-          className="right-[42%] top-[300px] w-[40px] lg:w-[56px]"
-          delay={0.65}
-          loop="float-slow"
-        />
-        <Floater
-          src="/assets/home/tiny_blue_sparkle_right.webp"
-          alt=""
-          width={28}
-          height={28}
-          className="right-[8%] top-[330px] w-[18px] lg:w-[22px]"
-          delay={0.85}
-          loop="sparkle-twinkle"
+          className="left-[18%] top-[300px] w-[44px] lg:w-[58px]"
+          delay={0.62}
+          loop="drift"
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-3xl text-center">
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease }}
-          className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300 backdrop-blur-md sm:text-xs"
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.045] px-3.5 py-1.5 text-[11px] uppercase tracking-[0.18em] text-ink-300 backdrop-blur-md sm:text-xs"
         >
           <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-400">
             <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400/70" />
           </span>
-          Astana · Open for work
+          Astana - open for selected builds
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease, delay: 0.1 }}
-          className="text-4xl font-medium leading-[1.04] tracking-tight text-gradient sm:text-5xl md:text-6xl lg:text-[72px]"
+          className="text-4xl font-medium leading-[1.04] tracking-tight text-gradient sm:text-5xl md:text-6xl lg:text-[76px]"
         >
-          Building products for{" "}
+          Useful digital products for{" "}
           <span className="font-display italic font-normal text-gradient-accent">
             Kazakhstan
           </span>{" "}
@@ -182,10 +122,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease, delay: 0.25 }}
-          className="mx-auto mt-6 max-w-2xl text-base text-ink-300 sm:text-lg md:text-xl"
+          className="mx-auto mt-6 max-w-2xl text-base leading-8 text-ink-300 sm:text-lg md:text-xl"
         >
-          Marketplaces, AI tooling, edtech and ecommerce — localized in
-          RU/KK with Kaspi Pay and local integrations.
+          Marketplaces, AI tooling, edtech, and ecommerce with local payments,
+          Russian-first UX, and the operational details needed to ship.
         </motion.p>
 
         <motion.div
@@ -196,22 +136,40 @@ export default function Hero() {
         >
           <Link
             href="#projects"
-            className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-[0_6px_30px_-6px_rgba(255,255,255,0.5)] transition-all hover:scale-[1.04] hover:shadow-[0_10px_40px_-6px_rgba(255,255,255,0.6)]"
+            className="group inline-flex items-center gap-2 rounded-full bg-ink-50 px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-[0_14px_34px_-18px_rgba(255,255,255,0.9)] transition-all hover:-translate-y-0.5 hover:bg-white"
           >
-            View our work
+            View work
             <span className="transition-transform group-hover:translate-x-0.5">
-              →
+              -&gt;
             </span>
           </Link>
           <a
             href="mailto:myrentmobile@gmail.com"
-            className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-ink-50 backdrop-blur-md transition-all hover:scale-[1.04] hover:border-white/30 hover:bg-white/10"
+            className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-5 py-2.5 text-sm font-semibold text-ink-50 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-accent-cyan/50 hover:bg-white/[0.08]"
           >
-            Let&apos;s talk
+            Start a brief
             <span className="transition-transform group-hover:translate-x-0.5">
-              ↗
+              -&gt;
             </span>
           </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease, delay: 0.52 }}
+          className="mx-auto mt-12 grid max-w-3xl gap-4 border-y border-white/10 py-5 text-left sm:grid-cols-3 sm:text-center"
+        >
+          {stats.map((item) => (
+            <div key={item.label}>
+              <div className="text-sm font-semibold text-ink-50 sm:text-base">
+                {item.value}
+              </div>
+              <div className="mt-1 text-xs uppercase tracking-[0.16em] text-ink-500">
+                {item.label}
+              </div>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>

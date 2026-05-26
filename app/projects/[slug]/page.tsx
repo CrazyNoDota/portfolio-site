@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import Background from "@/components/Background";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -13,7 +14,6 @@ import ProjectInfoCards, {
 } from "@/components/ProjectInfoCards";
 import { cardArt } from "@/components/ProjectCard";
 import { getProject, projects } from "@/lib/projects";
-import Image from "next/image";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -28,7 +28,7 @@ export async function generateMetadata({
   const project = getProject(slug);
   if (!project) return { title: "Not found" };
   return {
-    title: `${project.name} — QDeon Portfolio`,
+    title: `${project.name} - QDeon Portfolio`,
     description: project.tagline,
   };
 }
@@ -58,11 +58,10 @@ export default async function ProjectPage({
       <ProjectHighlights project={project} />
       {project.slug === "shinex" && <ShineXFeaturePanels />}
 
-      {/* Summary block */}
       <section className="mx-auto max-w-6xl px-5 py-8 sm:px-6 sm:py-12">
-        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+        <div className="rounded-lg border border-white/10 bg-white/[0.035] p-6 sm:p-8">
           <div className="mb-3 text-[11px] uppercase tracking-[0.22em] text-ink-400">
-            ◇ Summary
+            Summary
           </div>
           <p className="max-w-3xl text-base leading-relaxed text-ink-200 sm:text-lg">
             {project.summary}
@@ -70,17 +69,16 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      {/* Other projects */}
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-8 sm:px-6 sm:pb-24">
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex items-center justify-between gap-4">
           <div className="text-[11px] uppercase tracking-[0.22em] text-ink-400">
-            ◇ More projects
+            More projects
           </div>
           <Link
             href="/#projects"
             className="text-sm text-ink-300 transition-colors hover:text-ink-50"
           >
-            See all →
+            See all -&gt;
           </Link>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
@@ -90,9 +88,9 @@ export default async function ProjectPage({
               <Link
                 key={p.slug}
                 href={`/projects/${p.slug}`}
-                className="card-glow group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all hover:-translate-y-1 hover:border-white/25"
+                className="card-glow group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.035] transition-all hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.05]"
               >
-                <div className="relative h-40 overflow-hidden bg-ink-900">
+                <div className="relative h-40 overflow-hidden border-b border-white/10 bg-ink-900">
                   {art && (
                     <div className="absolute inset-0 grid place-items-center p-3">
                       <Image

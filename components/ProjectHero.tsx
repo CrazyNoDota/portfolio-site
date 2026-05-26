@@ -8,10 +8,10 @@ import type { Project } from "@/lib/projects";
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const statusColor: Record<Project["status"], string> = {
-  Live: "bg-emerald-400/15 text-emerald-300 border-emerald-400/30",
-  MVP: "bg-amber-400/15 text-amber-200 border-amber-400/30",
-  "In development": "bg-violet-400/15 text-violet-200 border-violet-400/30",
-  Prototype: "bg-cyan-400/15 text-cyan-200 border-cyan-400/30",
+  Live: "bg-emerald-400/12 text-emerald-300 border-emerald-400/28",
+  MVP: "bg-amber-400/12 text-amber-200 border-amber-400/28",
+  "In development": "bg-indigo-400/12 text-indigo-200 border-indigo-400/28",
+  Prototype: "bg-cyan-400/12 text-cyan-200 border-cyan-400/28",
 };
 
 function Floater({
@@ -33,7 +33,7 @@ function Floater({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.7 }}
+      initial={{ opacity: 0, scale: 0.82 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay, duration: 0.9, ease }}
       className={`pointer-events-none absolute gpu ${className}`}
@@ -45,7 +45,7 @@ function Floater({
           width={width}
           height={height}
           loading="lazy"
-          className="h-auto w-full select-none drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
+          className="h-auto w-full select-none drop-shadow-[0_14px_30px_rgba(0,0,0,0.42)]"
         />
       </div>
     </motion.div>
@@ -63,8 +63,7 @@ export default function ProjectHero({
 
   return (
     <section className="relative mx-auto max-w-6xl px-5 pt-12 sm:px-6 sm:pt-16 lg:pt-20">
-      <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
-        {/* Left: copy */}
+      <div className="grid items-center gap-10 border-t border-white/10 pt-8 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-6">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -82,7 +81,7 @@ export default function ProjectHero({
               {project.category}
             </span>
             <span className="text-[11px] uppercase tracking-[0.18em] text-ink-500">
-              · {project.year}
+              / {project.year}
             </span>
           </motion.div>
 
@@ -99,7 +98,7 @@ export default function ProjectHero({
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease, delay: 0.2 }}
-            className="mt-5 max-w-xl text-base text-ink-300 sm:text-lg"
+            className="mt-5 max-w-xl text-base leading-8 text-ink-300 sm:text-lg"
           >
             {project.tagline}
           </motion.p>
@@ -113,7 +112,7 @@ export default function ProjectHero({
             {project.stack.slice(0, 6).map((s) => (
               <span
                 key={s}
-                className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-ink-100"
+                className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-ink-100"
               >
                 {s}
               </span>
@@ -131,27 +130,26 @@ export default function ProjectHero({
                 href={project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-[0_6px_30px_-6px_rgba(255,255,255,0.4)] transition-all hover:scale-[1.04]"
+                className="group inline-flex items-center gap-2 rounded-full bg-ink-50 px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-[0_14px_34px_-18px_rgba(255,255,255,0.9)] transition-all hover:-translate-y-0.5 hover:bg-white"
               >
                 Visit live
                 <span className="transition-transform group-hover:translate-x-1">
-                  ↗
+                  -&gt;
                 </span>
               </a>
             )}
             <Link
               href="/#projects"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-ink-50 backdrop-blur-md transition-all hover:scale-[1.04] hover:border-white/30 hover:bg-white/10"
+              className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-5 py-2.5 text-sm font-semibold text-ink-50 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-accent-cyan/50 hover:bg-white/[0.08]"
             >
               <span className="transition-transform group-hover:-translate-x-1">
-                ←
+                &lt;-
               </span>
               Back to portfolio
             </Link>
           </motion.div>
         </div>
 
-        {/* Right: visual mockup composition */}
         <div className="relative h-[360px] sm:h-[440px] lg:col-span-6 lg:h-[500px]">
           <motion.div
             initial={{ opacity: 0, scale: 0.94, y: 8 }}
@@ -173,7 +171,7 @@ export default function ProjectHero({
               </div>
             ) : (
               heroArt && (
-                <div className="relative h-full w-full p-4 animate-float-slow">
+                <div className="relative h-full w-full animate-float-slow p-4">
                   <Image
                     src={heroArt}
                     alt={project.name}
@@ -188,7 +186,6 @@ export default function ProjectHero({
             )}
           </motion.div>
 
-          {/* Subtle ambient sparkles — non-redundant accents only */}
           <Floater
             src="/assets/project/sparkle_big_hero.webp"
             alt=""

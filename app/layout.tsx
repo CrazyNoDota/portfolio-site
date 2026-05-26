@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "QDeon — A product studio building AI-native products from Astana",
+  title: "QDeon - AI-native product studio in Astana",
   description:
-    "QDeon ships marketplaces, AI agents, educational software, and content automation — built for Kazakhstan and the CIS.",
+    "QDeon ships marketplaces, AI agents, educational software, and content automation for Kazakhstan and the CIS.",
   openGraph: {
-    title: "QDeon — AI-native product studio",
+    title: "QDeon - AI-native product studio",
     description:
       "Selected projects: ShineX, AI Ops Platform, AI Grant Agent, AdvertMarket KZ, ContentFarm, RoboStar, Solvea Atelier.",
     type: "website",
@@ -28,7 +28,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-black text-ink-100 antialiased">{children}</body>
+      <body className="bg-ink-950 text-ink-100 antialiased">{children}</body>
     </html>
   );
 }

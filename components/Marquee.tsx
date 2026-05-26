@@ -3,9 +3,9 @@ import { projects } from "@/lib/projects";
 export default function Marquee() {
   const items = [...projects, ...projects, ...projects];
   return (
-    <section className="relative overflow-hidden border-y border-white/5 bg-ink-950/40 py-5">
+    <section className="relative overflow-hidden border-y border-white/10 bg-ink-900/32 py-4">
       <div className="relative">
-        <div className="flex w-max items-center gap-10 animate-marquee">
+        <div className="flex w-max animate-marquee items-center gap-10">
           {items.map((p, i) => (
             <div
               key={`${p.slug}-${i}`}
@@ -20,7 +20,7 @@ export default function Marquee() {
               <span className="text-sm font-medium tracking-wide text-ink-200">
                 {p.name}
               </span>
-              <span className="text-ink-500">·</span>
+              <span className="text-ink-600">/</span>
             </div>
           ))}
         </div>

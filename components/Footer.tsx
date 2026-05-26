@@ -27,27 +27,28 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative mt-12 border-t border-white/5 bg-ink-950/60">
+    <footer className="relative mt-12 border-t border-white/10 bg-ink-950/72">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-20">
         <Reveal className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-6">
-            <h3 className="font-display text-3xl text-ink-50 sm:text-5xl">
-              Let&apos;s build <br />
-              <span className="italic text-gradient-accent">
-                something useful.
-              </span>
+            <div className="text-[11px] uppercase tracking-[0.22em] text-accent-cyan">
+              Work together
+            </div>
+            <h3 className="mt-4 font-display text-4xl leading-none text-ink-50 sm:text-5xl">
+              Build something{" "}
+              <span className="italic text-gradient-accent">useful.</span>
             </h3>
-            <p className="mt-4 max-w-md text-ink-400">
-              Have a real-world workflow that needs a quiet, AI-native
-              rebuild? Send a one-paragraph brief — I read everything.
+            <p className="mt-5 max-w-md text-sm leading-7 text-ink-400 sm:text-base">
+              Have a real workflow that needs a quiet, AI-native rebuild? Send a
+              one-paragraph brief and the context that matters.
             </p>
             <a
               href="mailto:myrentmobile@gmail.com"
-              className="group mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-[0_6px_30px_-6px_rgba(255,255,255,0.4)] transition-all hover:scale-[1.04]"
+              className="group mt-6 inline-flex items-center gap-2 rounded-full bg-ink-50 px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-[0_14px_34px_-18px_rgba(255,255,255,0.9)] transition-all hover:-translate-y-0.5 hover:bg-white"
             >
-              Work together
+              Send brief
               <span className="transition-transform group-hover:translate-x-1">
-                →
+                -&gt;
               </span>
             </a>
           </div>
@@ -57,38 +58,18 @@ export default function Footer() {
               Projects
             </div>
             <ul className="space-y-2 text-sm text-ink-200">
-              <li>
-                <Link
-                  className="transition-colors hover:text-white"
-                  href="/projects/shinex"
-                >
-                  ShineX
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="transition-colors hover:text-white"
-                  href="/projects/ai-ops-platform"
-                >
-                  AI Ops Platform
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="transition-colors hover:text-white"
-                  href="/projects/ai-grant-agent"
-                >
-                  AI Grant Agent
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="transition-colors hover:text-white"
-                  href="/projects/advertmarket-kz"
-                >
-                  AdvertMarket KZ
-                </Link>
-              </li>
+              {[
+                ["ShineX", "/projects/shinex"],
+                ["AI Ops Platform", "/projects/ai-ops-platform"],
+                ["AI Grant Agent", "/projects/ai-grant-agent"],
+                ["AdvertMarket KZ", "/projects/advertmarket-kz"],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link className="transition-colors hover:text-white" href={href}>
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -104,7 +85,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  shinex.kz ↗
+                  shinex.kz -&gt;
                 </a>
               </li>
               <li>
@@ -114,14 +95,14 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  GitHub ↗
+                  GitHub -&gt;
                 </a>
               </li>
             </ul>
           </div>
         </Reveal>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/5 pt-6 sm:flex-row sm:items-center">
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center">
           <div className="flex items-center gap-3 text-xs text-ink-500">
             <Image
               src="/assets/home/header_logo.webp"
@@ -130,7 +111,7 @@ export default function Footer() {
               height={20}
               className="h-5 w-auto opacity-70"
             />
-            © {new Date().getFullYear()} QDeon · Astana, KZ
+            (c) {new Date().getFullYear()} QDeon - Astana, KZ
           </div>
 
           <div className="flex items-center gap-2">
@@ -141,7 +122,7 @@ export default function Footer() {
                 target={s.href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noreferrer"
                 aria-label={s.alt}
-                className="group grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.04] transition-all hover:scale-110 hover:border-white/30 hover:bg-white/10"
+                className="group grid h-9 w-9 place-items-center rounded-lg border border-white/10 bg-white/[0.04] transition-all hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10"
               >
                 <Image
                   src={s.icon}
