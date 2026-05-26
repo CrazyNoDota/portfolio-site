@@ -28,7 +28,7 @@ export async function generateMetadata({
   const project = getProject(slug);
   if (!project) return { title: "Not found" };
   return {
-    title: `${project.name} — Ansar Portfolio`,
+    title: `${project.name} — QDeon Portfolio`,
     description: project.tagline,
   };
 }

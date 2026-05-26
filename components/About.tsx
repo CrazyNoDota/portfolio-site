@@ -70,14 +70,14 @@ export default function About() {
       <Reveal delay={0.1} className="mt-12 grid gap-8 md:grid-cols-12">
         <div className="md:col-span-7 space-y-4 text-ink-300 leading-relaxed">
           <p>
-            I&apos;m Ansar — solo founder, designer and engineer. I identify a
+            QDeon is a small product studio based in Astana. We identify a
             painful, real-world workflow inside a Kazakhstan-sized SMB and
-            rebuild it as a calm, AI-native product.
+            rebuild it as a calm, AI-native product — end to end.
           </p>
           <p>
             That means a lot of Next.js, a lot of TypeScript, and a lot of
             Russian-first UX. It also means building the unglamorous things
-            other people skip: ops dashboards, Telegram bots, scrapers,
+            other studios skip: ops dashboards, Telegram bots, scrapers,
             booking flows.
           </p>
         </div>
@@ -86,7 +86,7 @@ export default function About() {
             href="mailto:myrentmobile@gmail.com"
             className="group inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-ink-50 backdrop-blur-md transition-all hover:scale-[1.03] hover:border-white/30 hover:bg-white/10"
           >
-            More about me
+            More about us
             <span className="transition-transform group-hover:translate-x-1">
               →
             </span>

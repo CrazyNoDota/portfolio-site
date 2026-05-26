@@ -125,12 +125,12 @@ export default function Footer() {
           <div className="flex items-center gap-3 text-xs text-ink-500">
             <Image
               src="/assets/home/header_logo.webp"
-              alt="Ansar"
+              alt="QDeon"
               width={24}
               height={20}
               className="h-5 w-auto opacity-70"
             />
-            © {new Date().getFullYear()} Ansar · Astana, KZ
+            © {new Date().getFullYear()} QDeon · Astana, KZ
           </div>
 
           <div className="flex items-center gap-2">

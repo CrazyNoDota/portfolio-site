@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ansar — Builder of AI-native products from Astana",
+  title: "QDeon — A product studio building AI-native products from Astana",
   description:
-    "A portfolio of working products: marketplaces, AI agents, educational software, and content automation. Built for Kazakhstan and beyond.",
+    "QDeon ships marketplaces, AI agents, educational software, and content automation — built for Kazakhstan and the CIS.",
   openGraph: {
-    title: "Ansar — Builder of AI-native products",
+    title: "QDeon — AI-native product studio",
     description:
       "Selected projects: ShineX, AI Ops Platform, AI Grant Agent, AdvertMarket KZ, ContentFarm, RoboStar, Solvea Atelier.",
     type: "website",

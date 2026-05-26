@@ -30,13 +30,13 @@ export default function Header() {
         >
           <Image
             src="/assets/home/header_logo.webp"
-            alt="Ansar"
+            alt="QDeon"
             width={36}
             height={32}
             priority
             className="h-8 w-auto transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
           />
-          <span className="hidden text-ink-50 sm:inline">Ansar</span>
+          <span className="hidden text-ink-50 sm:inline">QDeon</span>
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm text-ink-300 md:flex">

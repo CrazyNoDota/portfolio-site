@@ -198,7 +198,7 @@ export default function Hero() {
             href="#projects"
             className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-[0_6px_30px_-6px_rgba(255,255,255,0.5)] transition-all hover:scale-[1.04] hover:shadow-[0_10px_40px_-6px_rgba(255,255,255,0.6)]"
           >
-            View my work
+            View our work
             <span className="transition-transform group-hover:translate-x-0.5">
               →
             </span>

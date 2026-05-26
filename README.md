@@ -1,4 +1,4 @@
-# Ansar — Portfolio
+# QDeon — Portfolio
 
 A single-page Next.js portfolio with per-project case-study pages.
 Built with the Modern SaaS / Luxo visual direction: dark canvas, soft
@@ -34,7 +34,7 @@ Open http://localhost:3000.
 
 ### Option A — via Vercel dashboard (recommended)
 
-1. Push this folder to a new GitHub repo (e.g. `ansar-portfolio`).
+1. Push this folder to a new GitHub repo (e.g. `qdeon-portfolio`).
 2. Go to https://vercel.com/new and import the repo.
 3. Vercel auto-detects Next.js — no env vars needed.
 4. Click **Deploy**.
@@ -88,4 +88,4 @@ lib/
 
 ## License
 
-Personal portfolio. All third-party brand names belong to their owners.
+QDeon portfolio. All third-party brand names belong to their owners.
