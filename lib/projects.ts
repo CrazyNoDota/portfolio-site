@@ -15,6 +15,8 @@ export type Project = {
   highlights: string[];
   // Hero gradient stops (Tailwind-friendly hex values)
   hero: { from: string; via: string; to: string };
+  phone?: string;
+  services?: Array<{ name: string; priceFrom: string; note?: string }>;
 };
 
 export const projects: Project[] = [
@@ -44,6 +46,12 @@ export const projects: Project[] = [
       "Mobile-first booking flow under 60 seconds",
     ],
     hero: { from: "#0f172a", via: "#155e75", to: "#22d3ee" },
+    phone: "+7 (700) 301-84-05",
+    services: [
+      { name: "Уборка квартир", priceFrom: "от 12 750 ₸", note: "Apartment cleaning" },
+      { name: "Уборка домов", priceFrom: "от 15 500 ₸", note: "House cleaning" },
+      { name: "Уборка коттеджей", priceFrom: "от 18 000 ₸", note: "Cottage cleaning" },
+    ],
   },
   {
     slug: "ai-ops-platform",

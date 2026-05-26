@@ -8,6 +8,8 @@ import ProjectInfoCards, {
   ProjectHighlights,
   ProjectProblemApproach,
   ShineXFeaturePanels,
+  ShineXLivePreview,
+  ShineXPricing,
 } from "@/components/ProjectInfoCards";
 import { cardArt } from "@/components/ProjectCard";
 import { getProject, projects } from "@/lib/projects";
@@ -50,6 +52,8 @@ export default async function ProjectPage({
 
       <ProjectHero project={project} heroArt={heroArt} />
       <ProjectInfoCards project={project} />
+      {project.slug === "shinex" && <ShineXLivePreview project={project} />}
+      {project.slug === "shinex" && <ShineXPricing project={project} />}
       <ProjectProblemApproach project={project} />
       <ProjectHighlights project={project} />
       {project.slug === "shinex" && <ShineXFeaturePanels />}

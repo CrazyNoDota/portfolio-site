@@ -7,6 +7,7 @@ build
 *.log
 .vercel
 next-env.d.ts
+tsconfig.tsbuildinfo
 DELETE_ME_partial_install/
 
 .vercel

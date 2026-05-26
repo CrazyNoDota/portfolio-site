@@ -14,7 +14,7 @@ const statusColor: Record<Project["status"], string> = {
 
 // Per-project artwork mapping (lives in public/assets/home/)
 export const cardArt: Record<string, { src: string; objectFit?: "cover" | "contain"; bgFrom?: string; bgTo?: string }> = {
-  shinex: { src: "/assets/project/hero_mockup_group.webp", objectFit: "contain" },
+  shinex: { src: "/assets/project/shinex_live_preview.webp", objectFit: "cover" },
   "ai-ops-platform": { src: "/assets/home/ai_operations_dashboard_art.webp", objectFit: "contain" },
   "ai-grant-agent": { src: "/assets/home/ai_grant_agent_icon_docs_telegram.webp", objectFit: "contain" },
   "advertmarket-kz": { src: "/assets/home/advertmarket_cart.webp", objectFit: "contain" },
