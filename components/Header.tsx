@@ -29,7 +29,7 @@ export default function Header() {
           className="group flex items-center gap-2.5 text-sm font-semibold tracking-tight"
         >
           <Image
-            src="/assets/home/header_logo.png"
+            src="/assets/home/header_logo.webp"
             alt="Ansar"
             width={36}
             height={32}

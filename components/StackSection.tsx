@@ -2,13 +2,13 @@ import Image from "next/image";
 import Reveal, { RevealStagger, RevealItem } from "./Reveal";
 
 const badges = [
-  { src: "/assets/home/stack_badge_nextjs.png", alt: "Next.js" },
-  { src: "/assets/home/stack_badge_react.png", alt: "React" },
-  { src: "/assets/home/stack_badge_typescript.png", alt: "TypeScript" },
-  { src: "/assets/home/stack_badge_tailwind.png", alt: "Tailwind CSS" },
-  { src: "/assets/home/stack_badge_ssg.png", alt: "SSG" },
-  { src: "/assets/home/stack_badge_vercel.png", alt: "Vercel" },
-  { src: "/assets/home/stack_badge_github.png", alt: "GitHub" },
+  { src: "/assets/home/stack_badge_nextjs.webp", alt: "Next.js" },
+  { src: "/assets/home/stack_badge_react.webp", alt: "React" },
+  { src: "/assets/home/stack_badge_typescript.webp", alt: "TypeScript" },
+  { src: "/assets/home/stack_badge_tailwind.webp", alt: "Tailwind CSS" },
+  { src: "/assets/home/stack_badge_ssg.webp", alt: "SSG" },
+  { src: "/assets/home/stack_badge_vercel.webp", alt: "Vercel" },
+  { src: "/assets/home/stack_badge_github.webp", alt: "GitHub" },
 ];
 
 export default function StackSection() {

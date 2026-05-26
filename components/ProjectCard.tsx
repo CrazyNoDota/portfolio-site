@@ -14,13 +14,13 @@ const statusColor: Record<Project["status"], string> = {
 
 // Per-project artwork mapping (lives in public/assets/home/)
 export const cardArt: Record<string, { src: string; objectFit?: "cover" | "contain"; bgFrom?: string; bgTo?: string }> = {
-  shinex: { src: "/assets/project/hero_mockup_group.png", objectFit: "contain" },
-  "ai-ops-platform": { src: "/assets/home/ai_operations_dashboard_art.png", objectFit: "contain" },
-  "ai-grant-agent": { src: "/assets/home/ai_grant_agent_icon_docs_telegram.png", objectFit: "contain" },
-  "advertmarket-kz": { src: "/assets/home/advertmarket_cart.png", objectFit: "contain" },
-  contentfarm: { src: "/assets/home/contentfarm_video_panel.png", objectFit: "contain" },
-  robostar: { src: "/assets/home/robostar_device.png", objectFit: "contain" },
-  "solvea-atelier": { src: "/assets/home/solvea_fur_photo.png", objectFit: "cover" },
+  shinex: { src: "/assets/project/hero_mockup_group.webp", objectFit: "contain" },
+  "ai-ops-platform": { src: "/assets/home/ai_operations_dashboard_art.webp", objectFit: "contain" },
+  "ai-grant-agent": { src: "/assets/home/ai_grant_agent_icon_docs_telegram.webp", objectFit: "contain" },
+  "advertmarket-kz": { src: "/assets/home/advertmarket_cart.webp", objectFit: "contain" },
+  contentfarm: { src: "/assets/home/contentfarm_video_panel.webp", objectFit: "contain" },
+  robostar: { src: "/assets/home/robostar_device.webp", objectFit: "contain" },
+  "solvea-atelier": { src: "/assets/home/solvea_fur_photo.webp", objectFit: "cover" },
 };
 
 export default function ProjectCard({

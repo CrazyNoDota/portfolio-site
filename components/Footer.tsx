@@ -5,22 +5,22 @@ import Reveal from "./Reveal";
 const socials = [
   {
     href: "https://t.me/myrentmobile",
-    icon: "/assets/project/footer_telegram_icon.png",
+    icon: "/assets/project/footer_telegram_icon.webp",
     alt: "Telegram",
   },
   {
     href: "https://www.linkedin.com/",
-    icon: "/assets/project/footer_linkedin_icon.png",
+    icon: "/assets/project/footer_linkedin_icon.webp",
     alt: "LinkedIn",
   },
   {
     href: "https://github.com/CrazyNoDota",
-    icon: "/assets/project/footer_github_icon.png",
+    icon: "/assets/project/footer_github_icon.webp",
     alt: "GitHub",
   },
   {
     href: "mailto:myrentmobile@gmail.com",
-    icon: "/assets/project/footer_email_icon.png",
+    icon: "/assets/project/footer_email_icon.webp",
     alt: "Email",
   },
 ];
@@ -124,7 +124,7 @@ export default function Footer() {
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/5 pt-6 sm:flex-row sm:items-center">
           <div className="flex items-center gap-3 text-xs text-ink-500">
             <Image
-              src="/assets/home/header_logo.png"
+              src="/assets/home/header_logo.webp"
               alt="Ansar"
               width={24}
               height={20}

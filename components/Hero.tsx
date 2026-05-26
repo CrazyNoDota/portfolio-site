@@ -37,7 +37,7 @@ function Floater({
           alt={alt}
           width={width}
           height={height}
-          loading="lazy"
+          loading="eager"
           className="h-auto w-full select-none drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
         />
       </div>
@@ -51,7 +51,7 @@ export default function Hero() {
       {/* Decorative floaters — only render on >=sm to keep mobile tidy */}
       <div className="absolute inset-0 hidden sm:block">
         <Floater
-          src="/assets/home/left_cleaning_brush.png"
+          src="/assets/home/left_cleaning_brush.webp"
           alt=""
           width={140}
           height={150}
@@ -60,7 +60,7 @@ export default function Hero() {
           loop="float-slow"
         />
         <Floater
-          src="/assets/home/blue_orb_left.png"
+          src="/assets/home/blue_orb_left.webp"
           alt=""
           width={70}
           height={70}
@@ -69,7 +69,7 @@ export default function Hero() {
           loop="drift"
         />
         <Floater
-          src="/assets/home/left_yellow_sparkles.png"
+          src="/assets/home/left_yellow_sparkles.webp"
           alt=""
           width={70}
           height={70}
@@ -78,7 +78,7 @@ export default function Hero() {
           loop="sparkle-twinkle"
         />
         <Floater
-          src="/assets/home/tiny_blue_sparkle_left.png"
+          src="/assets/home/tiny_blue_sparkle_left.webp"
           alt=""
           width={32}
           height={32}
@@ -88,7 +88,7 @@ export default function Hero() {
         />
 
         <Floater
-          src="/assets/home/kaspi_shopping_bag.png"
+          src="/assets/home/kaspi_shopping_bag.webp"
           alt=""
           width={150}
           height={150}
@@ -97,7 +97,7 @@ export default function Hero() {
           loop="float-med"
         />
         <Floater
-          src="/assets/home/paper_plane.png"
+          src="/assets/home/paper_plane.webp"
           alt=""
           width={170}
           height={170}
@@ -106,7 +106,7 @@ export default function Hero() {
           loop="drift"
         />
         <Floater
-          src="/assets/home/ai_chip.png"
+          src="/assets/home/ai_chip.webp"
           alt=""
           width={150}
           height={150}
@@ -115,7 +115,7 @@ export default function Hero() {
           loop="float-slow"
         />
         <Floater
-          src="/assets/home/robot.png"
+          src="/assets/home/robot.webp"
           alt=""
           width={200}
           height={200}
@@ -124,7 +124,7 @@ export default function Hero() {
           loop="float-med"
         />
         <Floater
-          src="/assets/home/magnifier.png"
+          src="/assets/home/magnifier.webp"
           alt=""
           width={100}
           height={100}
@@ -133,7 +133,7 @@ export default function Hero() {
           loop="drift"
         />
         <Floater
-          src="/assets/home/kazakhstan_map_pin.png"
+          src="/assets/home/kazakhstan_map_pin.webp"
           alt=""
           width={70}
           height={70}
@@ -142,7 +142,7 @@ export default function Hero() {
           loop="float-slow"
         />
         <Floater
-          src="/assets/home/tiny_blue_sparkle_right.png"
+          src="/assets/home/tiny_blue_sparkle_right.webp"
           alt=""
           width={28}
           height={28}

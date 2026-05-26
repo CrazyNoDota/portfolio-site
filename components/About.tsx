@@ -3,22 +3,22 @@ import Reveal, { RevealStagger, RevealItem } from "./Reveal";
 
 const features = [
   {
-    icon: "/assets/home/icon_local_first_globe.png",
+    icon: "/assets/home/icon_local_first_globe.webp",
     title: "Local-first",
     body: "RU/KK UX, Kazakhstan-aware integrations like Kaspi Pay, 2GIS and 1C — built for the real market, not a Western fork.",
   },
   {
-    icon: "/assets/home/icon_payments_card.png",
+    icon: "/assets/home/icon_payments_card.webp",
     title: "Payments & integrations",
     body: "Kaspi Pay, Stripe, and OpenAI/Anthropic stitched in idiomatically — payments and AI working out of the box.",
   },
   {
-    icon: "/assets/home/icon_ai_that_ships_sparkle.png",
+    icon: "/assets/home/icon_ai_that_ships_sparkle.webp",
     title: "AI that ships",
     body: "Agents, scrapers, scoring models, Telegram bots — not demos. Each one runs daily for real users.",
   },
   {
-    icon: "/assets/home/icon_end_to_end_rocket.png",
+    icon: "/assets/home/icon_end_to_end_rocket.webp",
     title: "End-to-end",
     body: "Discovery, design, code, infra, and the boring ops afterwards. One person, the whole product.",
   },

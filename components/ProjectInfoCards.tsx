@@ -8,17 +8,17 @@ function getInfoCards(p: Project): InfoCard[] {
   // Default cards — tuned per project where useful, otherwise derive from data
   if (p.slug === "shinex") {
     return [
-      { icon: "/assets/project/location_pin_icon.png", label: "Location", value: "Astana, KZ" },
-      { icon: "/assets/project/globe_icon.png", label: "Languages", value: "RU / KK / EN" },
-      { icon: "/assets/project/payment_card_icon.png", label: "Payments", value: "Kaspi Pay" },
-      { icon: "/assets/project/desktop_platform_icon.png", label: "Platform", value: "Mobile + Desktop" },
+      { icon: "/assets/project/location_pin_icon.webp", label: "Location", value: "Astana, KZ" },
+      { icon: "/assets/project/globe_icon.webp", label: "Languages", value: "RU / KK / EN" },
+      { icon: "/assets/project/payment_card_icon.webp", label: "Payments", value: "Kaspi Pay" },
+      { icon: "/assets/project/desktop_platform_icon.webp", label: "Platform", value: "Mobile + Desktop" },
     ];
   }
   return [
-    { icon: "/assets/project/location_pin_icon.png", label: "Region", value: "Kazakhstan / CIS" },
-    { icon: "/assets/project/globe_icon.png", label: "Status", value: p.status },
-    { icon: "/assets/project/payment_card_icon.png", label: "Category", value: p.category.split(" · ")[0] },
-    { icon: "/assets/project/desktop_platform_icon.png", label: "Year", value: p.year },
+    { icon: "/assets/project/location_pin_icon.webp", label: "Region", value: "Kazakhstan / CIS" },
+    { icon: "/assets/project/globe_icon.webp", label: "Status", value: p.status },
+    { icon: "/assets/project/payment_card_icon.webp", label: "Category", value: p.category.split(" · ")[0] },
+    { icon: "/assets/project/desktop_platform_icon.webp", label: "Year", value: p.year },
   ];
 }
 
@@ -51,10 +51,10 @@ export default function ProjectInfoCards({ project }: { project: Project }) {
 
 export function ProjectHighlights({ project }: { project: Project }) {
   const icons = [
-    "/assets/project/highlight_language_icon.png",
-    "/assets/project/highlight_kaspi_icon.png",
-    "/assets/project/highlight_cleaner_icon.png",
-    "/assets/project/highlight_mobile_icon.png",
+    "/assets/project/highlight_language_icon.webp",
+    "/assets/project/highlight_kaspi_icon.webp",
+    "/assets/project/highlight_cleaner_icon.webp",
+    "/assets/project/highlight_mobile_icon.webp",
   ];
   return (
     <section className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16">
@@ -134,7 +134,7 @@ export function ShineXFeaturePanels() {
             </h3>
             <div className="mt-4">
               <Image
-                src="/assets/project/booking_flow_ui_closeup.png"
+                src="/assets/project/booking_flow_ui_closeup.webp"
                 alt="Booking flow UI closeup"
                 width={870}
                 height={444}
@@ -142,7 +142,7 @@ export function ShineXFeaturePanels() {
               />
             </div>
             <div className="pointer-events-none absolute -bottom-3 -left-3 w-[90px] animate-float-slow sm:w-[110px]">
-              <Image src="/assets/project/cleaning_bucket_bottom_left.png" alt="" width={110} height={100} />
+              <Image src="/assets/project/cleaning_bucket_bottom_left.webp" alt="" width={110} height={100} />
             </div>
           </div>
         </Reveal>
@@ -156,7 +156,7 @@ export function ShineXFeaturePanels() {
             </h3>
             <div className="mt-4">
               <Image
-                src="/assets/project/order_tracking_ui_closeup.png"
+                src="/assets/project/order_tracking_ui_closeup.webp"
                 alt="Order tracking UI closeup"
                 width={870}
                 height={492}
@@ -164,7 +164,7 @@ export function ShineXFeaturePanels() {
               />
             </div>
             <div className="pointer-events-none absolute -bottom-2 -right-2 w-[70px] animate-float-med sm:w-[90px]">
-              <Image src="/assets/project/bell_bottom_right.png" alt="" width={90} height={80} />
+              <Image src="/assets/project/bell_bottom_right.webp" alt="" width={90} height={80} />
             </div>
           </div>
         </Reveal>

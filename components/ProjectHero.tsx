@@ -162,7 +162,7 @@ export default function ProjectHero({
             {isShineX ? (
               <div className="relative h-full w-full animate-float-slow">
                 <Image
-                  src="/assets/project/hero_mockup_group.png"
+                  src="/assets/project/hero_mockup_group.webp"
                   alt="ShineX product mockup"
                   fill
                   sizes="(min-width:1024px) 600px, 100vw"
@@ -190,7 +190,7 @@ export default function ProjectHero({
 
           {/* Subtle ambient sparkles — non-redundant accents only */}
           <Floater
-            src="/assets/project/sparkle_big_hero.png"
+            src="/assets/project/sparkle_big_hero.webp"
             alt=""
             width={50}
             height={50}
@@ -199,7 +199,7 @@ export default function ProjectHero({
             loop="sparkle-twinkle"
           />
           <Floater
-            src="/assets/project/sparkle_cluster_right.png"
+            src="/assets/project/sparkle_cluster_right.webp"
             alt=""
             width={50}
             height={48}
