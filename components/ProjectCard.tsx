@@ -22,20 +22,20 @@ export const cardArt: Record<
     objectFit: "contain",
   },
   "ai-grant-agent": {
-    src: "/assets/home/ai_grant_agent_icon_docs_telegram.webp",
-    objectFit: "contain",
+    src: "/assets/preview/ai-grant-agent-preview.webp",
+    objectFit: "cover",
   },
   "advertmarket-kz": {
-    src: "/assets/home/advertmarket_cart.webp",
-    objectFit: "contain",
+    src: "/assets/preview/advertmarket-preview.webp",
+    objectFit: "cover",
   },
   contentfarm: {
-    src: "/assets/home/contentfarm_video_panel.webp",
-    objectFit: "contain",
+    src: "/assets/preview/contentfarm-preview.webp",
+    objectFit: "cover",
   },
-  robostar: { src: "/assets/home/robostar_device.webp", objectFit: "contain" },
+  robostar: { src: "/assets/preview/robostar-preview.webp", objectFit: "cover" },
   "solvea-atelier": {
-    src: "/assets/home/solvea_fur_photo.webp",
+    src: "/assets/preview/solvea-atelier-preview.webp",
     objectFit: "cover",
   },
 };
